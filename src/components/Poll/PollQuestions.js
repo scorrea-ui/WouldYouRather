@@ -6,6 +6,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import { saveQuestionAnswer } from '../../redux/actions/questions';
+import { Redirect } from 'react-router';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -52,6 +53,11 @@ const PollQuestions = ({
     );
     history.push(`/results/${id}`);
   };
+
+  if (question === undefined) {
+    console.log(question);
+    return <Redirect to='/404' />;
+  }
 
   return (
     <Grid container justify='center' alignItems='center'>

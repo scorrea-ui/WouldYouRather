@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   wrap: {
     width: '100%',
     marginBottom: theme.spacing(4),
-    padding: theme.spacing(4)
+    padding: theme.spacing(4),
   },
 }));
 
@@ -36,8 +36,8 @@ const Leaderboard = ({ sortedUsers }) => {
         const answeredQuestions = Object.keys(user.answers).length;
         const questionsAsked = user.questions.length;
         return (
-          <Paper className={classes.wrap} elevation={2}>
-            <Grid container justify='center' alignItems='center' key={user.id}>
+          <Paper className={classes.wrap} elevation={2} key={user.id}>
+            <Grid container justify='center' alignItems='center'>
               <Grid item xs={12} md={4} className={classes.alignCenter}>
                 <img
                   src={user.avatarURL}

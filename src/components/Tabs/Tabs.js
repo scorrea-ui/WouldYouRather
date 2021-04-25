@@ -88,7 +88,9 @@ function mapStateToProps({ auth, questions }) {
   return {
     users: auth.users,
     authedUser: auth.authedUser,
-    answeredQuestions: Object.keys(auth.users[auth.authedUser].answers),
+    answeredQuestions: Object.keys(
+      auth.users[auth.authedUser].answers
+    ).reverse(),
     questions: questions.questions,
     unansweredQuestions: Object.keys(questions.questions)
       .sort(

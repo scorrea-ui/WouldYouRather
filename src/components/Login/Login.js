@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Login = ({ dispatch, users, history }) => {
+const Login = ({ dispatch, users, history, location }) => {
   const classes = useStyles();
 
   useEffect(() => {
@@ -49,8 +49,9 @@ const Login = ({ dispatch, users, history }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const { from } = location.state || { from: { pathname: '/' } };
     dispatch(login(loggedInUser));
-    history.push('/');
+    history.push(from);
   };
 
   return (
