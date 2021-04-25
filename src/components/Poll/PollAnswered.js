@@ -80,8 +80,7 @@ const PollAnswered = ({ question, users, authedUser }) => {
   );
 };
 
-function mapStateToProps({ questions, auth }, props) {
-  const { question_id } = props.match.params;
+function mapStateToProps({ questions, auth }, { question_id }) {
   return {
     question: questions.questions[question_id],
     users: auth.users,

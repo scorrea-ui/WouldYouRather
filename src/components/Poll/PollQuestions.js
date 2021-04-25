@@ -55,7 +55,6 @@ const PollQuestions = ({
   };
 
   if (question === undefined) {
-    console.log(question);
     return <Redirect to='/404' />;
   }
 
@@ -63,7 +62,6 @@ const PollQuestions = ({
     <Grid container justify='center' alignItems='center'>
       <Grid item xs={12}>
         <h1 className={classes.alignCenter}>
-          {' '}
           {users[question.author].name} asks
         </h1>
       </Grid>
@@ -111,8 +109,7 @@ const PollQuestions = ({
   );
 };
 
-function mapStateToProps({ questions, auth }, props) {
-  const { question_id } = props.match.params;
+function mapStateToProps({ questions, auth }, { question_id }) {
   return {
     id: question_id,
     question: questions.questions[question_id],

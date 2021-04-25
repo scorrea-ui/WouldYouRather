@@ -7,13 +7,12 @@ import Home from './components/Home/Home';
 import ProtectedRoute from './components/ProtectedRoute';
 import Header from './components/Header/Header';
 import NotFound from './components/NotFound/NotFound';
-import PollQuestions from './components/Poll/PollQuestions';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getInitialData } from './redux/actions/shared';
-import PollAnswered from './components/Poll/PollAnswered';
 import AddQuestion from './components/AddQuestion/AddQuestion';
 import Leaderboard from './components/Leaderboard/Leaderboard';
+import Poll from './components/Poll/Poll';
 
 function App({ dispatch }) {
   useEffect(() => {
@@ -31,11 +30,7 @@ function App({ dispatch }) {
               <Route exact path='/login' component={Login} />
               <ProtectedRoute
                 path='/questions/:question_id'
-                component={PollQuestions}
-              ></ProtectedRoute>
-              <ProtectedRoute
-                path='/results/:question_id'
-                component={PollAnswered}
+                component={Poll}
               ></ProtectedRoute>
               <ProtectedRoute
                 path='/add'

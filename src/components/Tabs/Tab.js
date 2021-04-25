@@ -27,7 +27,10 @@ const QuestionTab = ({ question, user, answered }) => {
         <h3>Would you rather</h3>
         <p>...{question.optionOne.text}...</p>
         <Link
-          to={`${answered ? '/results/' : '/questions/'}` + question.id}
+          to={{
+            pathname: `/questions/${question.id}`,
+            state: { answered },
+          }}
           variant='contained'
           color='primary'
           className={classes.button}
