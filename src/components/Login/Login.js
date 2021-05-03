@@ -79,10 +79,10 @@ const Login = ({ dispatch, users, history, location }) => {
               value={loggedInUser || ''}
             >
               {users &&
-                Object.keys(users).map((user) => {
-                  const value = users[user];
+                Object.keys(users).map((key) => {
+                  const value = users[key];
                   return (
-                    <MenuItem key={user} value={user}>
+                    <MenuItem key={key} value={key}>
                       {value.name}
                     </MenuItem>
                   );

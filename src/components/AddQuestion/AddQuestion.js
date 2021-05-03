@@ -79,7 +79,7 @@ const AddQuestion = ({ dispatch, authedUser}) => {
             name='optionTwoText'
             onChange={handleChange}
           />
-          <Button type='submit' variant='contained' color='primary'>
+          <Button type='submit' variant='contained' color='primary' disabled={questions.optionOneText === '' || questions.optionTwoText === ''}>
             Submit
           </Button>
         </div>
