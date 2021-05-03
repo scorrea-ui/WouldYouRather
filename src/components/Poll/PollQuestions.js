@@ -51,7 +51,6 @@ const PollQuestions = ({
         answer: value.name,
       })
     );
-    history.push(`/results/${id}`);
   };
 
   if (question === undefined) {

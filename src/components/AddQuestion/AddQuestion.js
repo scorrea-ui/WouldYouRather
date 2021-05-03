@@ -4,6 +4,8 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { saveQuestionToUser } from '../../redux/actions/questions';
+import { useHistory } from "react-router-dom";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,7 +18,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AddQuestion = ({ dispatch, authedUser, history }) => {
+const AddQuestion = ({ dispatch, authedUser}) => {
+  const history = useHistory();
   const classes = useStyles();
   const [questions, setQuestions] = useState({
     optionOneText: '',
@@ -91,4 +94,4 @@ function mapStateToProps({ auth }) {
   };
 }
 
-export default connect(mapStateToProps)(AddQuestion);
+export default connect(mapStateToProps)(AddQuestion)
